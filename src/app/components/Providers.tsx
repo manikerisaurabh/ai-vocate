@@ -1,13 +1,16 @@
 "use client";
 
+import { ClerkProvider } from "@clerk/nextjs";
 import { NextUIProvider } from "@nextui-org/react";
 import { PropsWithChildren } from "react";
 
 export const Providers = ({ children }: PropsWithChildren) => {
     return (
-        <NextUIProvider>
-            {children}
-        </NextUIProvider>
+        <ClerkProvider>
+            <NextUIProvider>
+                {children}
+            </NextUIProvider>
+        </ClerkProvider>
     )
 }
 
