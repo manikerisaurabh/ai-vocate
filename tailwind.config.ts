@@ -1,5 +1,9 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import { nextui } from "@nextui-org/react";
 import type { Config } from "tailwindcss";
+
+
+
 
 export default {
 	darkMode: ["class"],
@@ -55,7 +59,9 @@ export default {
 				}
 			},
 			darkMode: "class",
-			plugins: [nextui()],
+			plugins: [
+				nextui(),
+			],
 
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -66,3 +72,5 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate"), nextui()],
 } satisfies Config;
+
+

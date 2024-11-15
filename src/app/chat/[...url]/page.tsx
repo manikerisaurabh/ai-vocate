@@ -3,14 +3,21 @@
 import { redis } from '@/lib/redis';
 import { ragChat } from '@/lib/reg-chat'
 import React from 'react'
-import { ChatWrapper } from '../components/ChatWrapper';
+import { ChatWrapper } from '../../components/ChatWrapper';
 import { cookies } from 'next/headers';
-interface PageProps {
-    params: {
-        url: string | string[] | undefined
 
-    }
+//type Params = Promise<{ rcdId: string }>
+// interface PageProps {
+//     params: {
+//         url: string | string[] | undefined
+
+//     }
+// }
+
+type PageProps = {
+    params: Promise<{ url: string | string[] | undefined }>
 }
+
 
 function reconstructUrl({ url }: { url: string[] }) {
     const decodedComponents = url.map((component) => decodeURIComponent(component));
@@ -19,7 +26,7 @@ function reconstructUrl({ url }: { url: string[] }) {
 }
 const Page = async ({ params }: PageProps) => {
     const sessionCookie = (await cookies()).get("sessionId")?.value;
-    const reconstructedUrl = reconstructUrl({ url: params.url as string[] })
+    const reconstructedUrl = reconstructUrl({ url: (await params).url as string[] })
 
     const sessionId = (reconstructedUrl + "--" + sessionCookie).replace(/\//g, "")
 
@@ -42,3 +49,4 @@ const Page = async ({ params }: PageProps) => {
 }
 
 export default Page
+
