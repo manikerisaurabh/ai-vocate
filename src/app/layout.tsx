@@ -29,7 +29,6 @@ export default function RootLayout({
       >
         <Providers>
           <main className="h-screen dark text-foreground bg-background">
-
             {children}
           </main>
         </Providers>
