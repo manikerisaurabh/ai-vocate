@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# **AI-vocate** 🤖   ([visit](https://ai-vocate.vercel.app/))
 
-## Getting Started
+AI-vocate is a cutting-edge conversational AI platform designed to deliver intelligent, real-time responses to user queries. Leveraging the power of modern frameworks and technologies, it offers a seamless and efficient AI-driven experience, much like ChatGPT.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## **Features** 🌟
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **AI-Powered Conversations**: Provides accurate and context-aware responses.  
+- **User Authentication**: Seamlessly integrated with **Clerk** for secure logins.  
+- **High Performance**: Optimized backend using **Upstash** for caching and **PostgreSQL** for scalable data management.  
+- **Responsive UI**: Built with **Next.js** for a fast, user-friendly experience.  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## **Tech Stack** 🔧  
 
-## Learn More
+- **Frontend**:  
+  - Framework: [Next.js](https://nextjs.org/)  
+  - Styling: CSS Modules / Tailwind CSS  
 
-To learn more about Next.js, take a look at the following resources:
+- **Backend**:  
+  - Database: [PostgreSQL](https://www.postgresql.org/)  
+  - Caching: [Upstash](https://upstash.com/)  
+  - Authentication: [Clerk](https://clerk.dev/)  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Deployment**:  
+  - Hosted on [Vercel](https://vercel.com/).  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## **Installation** 🛠️  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Follow these steps to set up the project locally:  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Prerequisites:
+- Node.js >= 18.0  
+- PostgreSQL database  
+- Clerk API keys  
+- Upstash Redis instance  
+
+### Steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/manikerisaurabh/ai-vocate.git
+   cd ai-vocate
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables:
+   ```bash
+   UPSTASH_VECTOR_REST_URL=YOUR_UPSTASH_VECTOR_REST_URL
+   UPSTASH_VECTOR_REST_TOKEN=YOUR_UPSTASH_VECTOR_REST_TOKEN
+   QSTASH_TOKEN=YOUR_QSTASH_TOKEN
+   UPSTASH_REDIS_REST_URL=YOUR_UPSTASH_REDIS_REST_URL
+   UPSTASH_REDIS_REST_TOKEN=YOUR_UPSTASH_REDIS_REST_TOKEN
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=YOUR_NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+   CLERK_SECRET_KEY=YOUR_CLERK_SECRET_KEY
+   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+   ```
+4. Run the development server:
+   ```bash
+     npm run dev
+   ```
+---
+Contributing 🤝
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+  ```bash
+  git checkout -b feature/your-feature-name
+  ```
+3. Commit your changes:
+   ```bash
+     git commit -m "Add your message"
+   ```
+4. Push to the branch:
+   ```bash
+     git push origin feature/your-feature-name
+   ```
+5. Create a pull request.
+
+   
